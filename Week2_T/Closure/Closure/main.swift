@@ -64,24 +64,27 @@ print(ordNumber)
 // trailing closure, closure의 내부 구현이 길어지는 경우
 // 트레일링 클로져는 클로져가 함수의 마지막 파라미터로 전달되는 경우에만 사용 가능하다
 performClosure() {"Trailing Closure, \($0)"}
-// 함수에 클로져 파라미터 하나만 존재하는 경우 () 생략 가능
+// 함수에 클로져 파라미터 단 하나만 존재하는 경우 () 생략 가능
 performClosure{"Hello Trailing Closure, \($0)"}
+// 함수 선언이랑 헛갈릴수 있기때문에 주의하셔야 합니다.
 
 
 // capture value
-
 var num = 0
-
 let closure = { print("inside of block: \(num)")}
-
 num += 10
-
 print("outside of block: \(num)")
-
 closure()
 
+func giveMe (_ c: (Int) -> (Int)){
+    let result = c(5)
+    print("call giveMe \(result)")
+}
 
-
+giveMe({
+    print("\($0)")
+    return $0
+})
 
 
 
