@@ -18,10 +18,10 @@ print(member.1)
 let (memberId, name, address, tel) = member
 print(memberId)
 
-let (_, message) = result
+var (_, message) = result
 print(message)
 
-// 항상 숫자를 맞추어 주어야한다
+// 항상 갯수를 맞추어 주어야한다
 
 // Named tuple
 let drink = (coffe: "latte", tea: "herb", diary: "milk")
