@@ -22,7 +22,7 @@ func addOne(x: Int) -> Int {    // 여기서 x는 Formal parameter 라고 함.
 }
 var value = 7   // argument, 인자
 print(addOne(x: value))
-// 8
+// 4
 
 func multyply(value x: Int, multiplier by: Int) -> Int {
     return x*by
@@ -35,13 +35,8 @@ func add(_ x:Int, value y:Int) -> Int {
 }
 print(add(3, value: 4))
 // 7
-func add55(x: Int, value y:Int) -> Int{
-    return x + y
-}
 
-// 첫 레이블이 없는경우 에러?
-
-func addFive(x: Int, defualt y:Int = 5) -> Int{
+func addFive(x: Int, y:Int = 5) -> Int{
     return x + y
 }
 print(addFive(x: 4))
@@ -78,9 +73,8 @@ var a = 1
 var b = 2
 swap(&a, &b)
 print(a, b)
-// 2 1
 
-// 입출력 파라미터 사용
+// 가변 파라미터 사용
 func swap2(_ lhs: inout Int, _ rhs: inout Int) {
     let tmp = lhs
     lhs = rhs
